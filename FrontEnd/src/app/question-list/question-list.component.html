@@ -1,0 +1,21 @@
+<div class= "container py-5">
+    <table  class="table table-bordered table-striped">
+        <tbody>
+            <th>ID</th>
+            <th>Question</th>
+            <th>CategoryID</th>
+            <th>Email</th>
+           
+        </tbody>
+        <tbody>
+            <tr *ngFor="let e of QuestionList">
+                <td>{{e.ID}}</td>
+                <td>{{e.Question}}</td>
+                <td>{{e.CategoryID}}</td>
+                <td>{{e.Email}}</td>
+                <button  type="button" class="btn btn-danger btn-sn ml-1" name="qnm" (click)="viewQuestion(e.ID)" >Anwser</button>
+
+            </tr>
+        </tbody>
+    </table>
+</div>

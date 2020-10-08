@@ -1,0 +1,41 @@
+
+<br>
+
+<p>{{questionModel.Question}}</p>
+
+<!-- 
+<form (ngSubmit)="postAnswer()"> <br>
+  
+
+    
+    <input type="text"  name="AnswererName" [(ngModel)]="AnswerInfo.AnswererName"   placeholder="Name..."><br>
+    <br>
+
+    <input type="text"  name="AnswererEmail" [(ngModel)]="AnswerInfo.AnswererEmail"   placeholder="Email..."><br> 
+    <br>
+    <textarea required rows="6" cols="60"  name="ans"  placeholder="Enter your answer..."  [(ngModel)]="AnswerInfo.Answer" ></textarea><br>
+    <br>
+    <input type="submit" value="submit" class="btn btn-primary">
+
+</form> --> 
+<form [formGroup]="answerForm" (ngSubmit)="postAnswer()">
+  
+        <label>
+                Answerer Name:
+          <input type="text" formControlName="AnswererName"><br>
+        </label>
+        <label>
+                Answerer Email:
+                <input type="text" formControlName="AnswererEmail"><br>
+         </label>
+
+         <label>
+                Answer:
+                <textarea type="text" formControlName="Answer"></textarea><br>
+         </label>
+         <input type="hidden" formControlName="QuestionID"><br>
+
+        <button type="submit" class="btn btn-primary"[disabled]="!answerForm.valid">Submit</button>
+      
+      </form>
+

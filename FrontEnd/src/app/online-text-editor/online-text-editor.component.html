@@ -1,0 +1,29 @@
+
+<form [formGroup]="textForm"  >
+<div class="row">
+<div class="col-md-2">
+  <input type="submit" (click)="dynamicDownloadTxt()" value="Save" class ="btn btn-primary">
+</div>
+<div style="float:right" class="col-md-4">
+  
+  <input type="text" placeholder="Enter Save as File name here " class="form-control" formControlName="Name"><br>
+  <label>
+      <select id="cars">
+          <option *ngFor="let item of files" [value]="item.FullPath">{{item.OriginalPath}}</option>
+      </select>
+
+  </label>
+ 
+</div>
+</div>
+<div class="row">
+  <div class="col-md-6"></div>
+</div>
+<div class="row">
+  <div style="text-align: center;padding:20px;margin-left: 100px;" class="col-md-10">
+      <textarea type="text" class="form-control" rows = "30" cols="100" formControlName="Text"></textarea>
+  </div>
+
+</div>
+</form>
+              

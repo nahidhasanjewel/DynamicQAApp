@@ -1,0 +1,24 @@
+<form  #myform ="ngForm" (ngSubmit)="onclickSubmit()">
+    <br>
+    <input required type="text" name="FirstName" [(ngModel)]="askModel.Email" placeholder="Email Address..">
+    <br>
+
+    <div placeholder="Select categoty..">
+        <br>
+        <select name="cat" [(ngModel)]="askModel.CategoryID" >
+            <option value="" disabled selected>Select your option....</option>
+            <option *ngFor="let category of CategoryList"  [value]="category.CategoryID" >{{category.CategoryName}}</option>
+        </select>
+    </div>
+
+    <br>
+    <textarea required rows="6" cols="40" name="cmnt" [(ngModel)]="askModel.Question" placeholder=" Your question..."></textarea>
+    <br>
+    <input type="submit" class="btn btn-primary"  value="Submit">
+</form>
+
+<form #myForm (ngSubmit)="onclickSubmit()">
+    <br>
+    <input required type="">
+
+</form>
